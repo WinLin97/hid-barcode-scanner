@@ -1,13 +1,17 @@
 ## Keymap overlay for a Polish Programmer keyboard
+## Author: winlin97
+## First version: 11/10/2024
+## Last update: 15/10/2024
 
 ## -------------------------
 ## SOME USEFUL INFORMATIONS
 ## -------------------------
 ##  ... for everyone who, just like me (winlin97), had no idea how it works, and want to make a custom keyboard layout.
 ## -------------------------
-## The PC (thanks to the HID interface) see this application just like the physical keyboard.
-## Application does not know the actual layout of the keyboard in the system.
+## The PC see this application just like the physical keyboard thanks to the HID interface.
+## Application does not know the actual layout of the keyboard is setted in the system on PC.
 ## We must to call the language-appropriate characters just as if we were typing them on a physical keyboard with this layout.
+## So here we must define a map: which key with which modificators must be pressed to "show the specified character" e.g. in the notepad on PC.
 ## -------------------------
 ## This file contains a table of key mapping.
 ## Column order in the table: CHAR <-SPACE-> HID_KEY_SCANCODE <-SPACE-> MODIFIERS
@@ -34,6 +38,11 @@
 ## 40: RALT     [bit: 0100 0000] // "ALTGR" in polish programmers layout -> https://kbdlayout.info/KBDPL1/
 ## 80: RMETA    [bit: 1000 0000]
 ## So, to get RALT and LSHIFT in the same time we have: 0x40 | 0x02 -> [bit: 0100 0010] -> 0x42
+## -------------------------
+## TEST PATTERN - You can use it to generate QR code to check the layout is working properly.
+## `1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./
+## ~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?
+## ąśćńłóężźĄŚĆŃŁÓĘŻŹ
 ## -------------------------
 ## More info -> https://source.android.com/docs/core/interaction/input/keyboard-devices
 ## -------------------------
@@ -87,6 +96,11 @@ $ 21 02
 * 25 02
 ( 26 02
 ) 27 02
+
 _ 2D 02
 + 2E 02
 ~ 35 02
+
+- 2D 00
+= 2E 00
+` 35 00

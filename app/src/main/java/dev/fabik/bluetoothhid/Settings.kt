@@ -36,6 +36,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Keyboard
 import androidx.compose.material.icons.filled.LibraryAdd
 import androidx.compose.material.icons.filled.Link
+import androidx.compose.material.icons.filled.PhonelinkSetup
 import androidx.compose.material.icons.filled.QrCode2
 import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material.icons.filled.ScreenLockPortrait
@@ -130,6 +131,14 @@ fun SectionTitle(@StringRes id: Int) {
 
 @Composable
 fun ConnectionSettings() {
+    ComboBoxPreference(
+        title = stringResource(R.string.connection_mode),
+        desc = stringResource(R.string.connection_mode_desc),
+        icon = Icons.Default.PhonelinkSetup,
+        values = stringArrayResource(R.array.connection_mode_values),
+        preference = PreferenceStore.CONNECTION_MODE
+    )
+
     SwitchPreference(
         title = stringResource(R.string.auto_connect),
         desc = stringResource(R.string.auto_connect_desc),

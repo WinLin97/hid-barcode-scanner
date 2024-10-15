@@ -39,10 +39,11 @@ open class PreferenceStore {
             Preference(this, value)
 
         // Connection
+        val CONNECTION_MODE = intPreferencesKey("connection_mode") defaultsTo 0 // default mode is HID Keyboard
         val AUTO_CONNECT = booleanPreferencesKey("auto_connect") defaultsTo false
         val SHOW_UNNAMED = booleanPreferencesKey("show_unnamed") defaultsTo false
         val SEND_DELAY = floatPreferencesKey("send_delay") defaultsTo 10f
-        val KEYBOARD_LAYOUT = intPreferencesKey("keyboard_layout") defaultsTo 0
+        val KEYBOARD_LAYOUT = intPreferencesKey("keyboard_layout") defaultsTo 1
         val EXTRA_KEYS = intPreferencesKey("extra_keys") defaultsTo 0 // None
         val TEMPLATE_TEXT = stringPreferencesKey("template_text") defaultsTo ""
         val ENABLE_JS = booleanPreferencesKey("enable_js") defaultsTo false
